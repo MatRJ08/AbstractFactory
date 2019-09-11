@@ -15,7 +15,7 @@ public abstract class Disco{
  
     public abstract String getNombre();
  
-    public abstract String getPrecio();
+    public abstract int getPrecio();
  
     @Override
     public String toString() {

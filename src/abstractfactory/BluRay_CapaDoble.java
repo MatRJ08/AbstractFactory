@@ -22,7 +22,7 @@ public class BluRay_CapaDoble extends BluRay {
     }
  
     @Override
-    public String getPrecio() {
-            return "28.00$";
+    public int getPrecio() {
+            return 28;
     }
 }

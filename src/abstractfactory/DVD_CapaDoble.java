@@ -22,7 +22,7 @@ public class DVD_CapaDoble extends DVD {
     }
  
     @Override
-    public String getPrecio() {
-            return "10.00$";
+    public int getPrecio() {
+            return 10;
     }
 }

@@ -22,7 +22,7 @@ public class DVD_CapaSimple extends DVD {
     }
  
     @Override
-    public String getPrecio() {
-            return "5.00$";
+    public int getPrecio() {
+            return 5;
     }
 }
