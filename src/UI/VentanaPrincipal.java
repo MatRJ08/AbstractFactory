@@ -5,6 +5,7 @@ import abstractfactory.FabricaDiscos_CapaSimple;
 import abstractfactory.FabricaDiscos_CapaDoble;
 import abstractfactory.DVD;
 import abstractfactory.BluRay;
+import abstractfactory.Lista;
 import javax.swing.JOptionPane;
 /**
  *
@@ -16,6 +17,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     FabricaDiscos fabrica;
     BluRay bluRay;
     DVD dvd;
+    Lista lista = new Lista();
     public VentanaPrincipal() {
         initComponents();
     }
@@ -34,9 +36,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         botonDVD_D = new javax.swing.JButton();
         botonBlueRay_S = new javax.swing.JButton();
         botonBlueRay_D = new javax.swing.JButton();
-        fieldCantidadDiscos = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -70,14 +72,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        fieldCantidadDiscos.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        fieldCantidadDiscos.setText("1");
-        fieldCantidadDiscos.setToolTipText("Cantidad de Discos a comprar");
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel1.setText("Discos a Comprar");
-
         jButton1.setText("Salir");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,47 +79,57 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setText("Cobrar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(51, 255, 255));
+        jLabel2.setText("Venta de Discos");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(111, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(fieldCantidadDiscos, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(botonDVD_S)
-                                .addGap(80, 80, 80)
-                                .addComponent(botonDVD_D)))
-                        .addGap(91, 91, 91)
-                        .addComponent(botonBlueRay_S)
-                        .addGap(85, 85, 85)
-                        .addComponent(botonBlueRay_D)
-                        .addGap(104, 104, 104))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(69, 69, 69))))
+                .addComponent(botonDVD_S)
+                .addGap(80, 80, 80)
+                .addComponent(botonDVD_D)
+                .addGap(91, 91, 91)
+                .addComponent(botonBlueRay_S)
+                .addGap(85, 85, 85)
+                .addComponent(botonBlueRay_D)
+                .addGap(104, 104, 104))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(69, 69, 69))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(315, 315, 315)
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(fieldCantidadDiscos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
+                .addGap(27, 27, 27)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonDVD_S)
                     .addComponent(botonDVD_D)
                     .addComponent(botonBlueRay_S)
                     .addComponent(botonBlueRay_D))
                 .addGap(36, 36, 36)
-                .addComponent(jButton1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
                 .addContainerGap())
         );
 
@@ -146,73 +150,29 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private int CalcularPrecio(int cantidad, int precio){        
-        int cobro = 0;
-        while(cantidad != 0){
-            cobro += precio;
-            cantidad--;
-        }
-        return cobro;
-    }
     private void botonBlueRay_SActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBlueRay_SActionPerformed
-        fabrica = new FabricaDiscos_CapaSimple();
-        bluRay = fabrica.crearBluRay();
-        int cantidad = Integer.parseInt(fieldCantidadDiscos.getText());
-        int cobro = CalcularPrecio(cantidad, bluRay.getPrecio());
-        JOptionPane.showConfirmDialog(rootPane,"Discos \n"
-                                              +"Tipo: "+bluRay.getNombre()+"\n"
-                                              +"Precio: "+bluRay.getPrecio()+"\n"
-                                              +"Cantidad: "+cantidad+"\n"
-                                              +"Precio Total: "+cobro+"\n\n"
-                                              + "¿Desea efectuar la compra?","Efectuar Compra",1,3);
-       
-        
-        
+        lista.insertFirst("BluRay","Simple");
     }//GEN-LAST:event_botonBlueRay_SActionPerformed
 
     private void botonDVD_SActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonDVD_SActionPerformed
-        fabrica = new FabricaDiscos_CapaSimple();
-        dvd = fabrica.crearDVD();
-        int cantidad = Integer.parseInt(fieldCantidadDiscos.getText());
-        int cobro = CalcularPrecio(cantidad, dvd.getPrecio());
-        JOptionPane.showConfirmDialog(rootPane,"Discos \n"
-                                              +"Tipo: "+dvd.getNombre()+"\n"
-                                              +"Precio: "+dvd.getPrecio()+"\n"
-                                              +"Cantidad: "+cantidad+"\n"
-                                              +"Precio Total: "+cobro+"\n\n"
-                                              + "¿Desea efectuar la compra?","Efectuar Compra",1,3);
-        
+        lista.insertFirst("DVD","Simple");
     }//GEN-LAST:event_botonDVD_SActionPerformed
 
     private void botonBlueRay_DActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBlueRay_DActionPerformed
-        fabrica = new FabricaDiscos_CapaDoble();
-        bluRay = fabrica.crearBluRay();
-        int cantidad = Integer.parseInt(fieldCantidadDiscos.getText());
-        int cobro = CalcularPrecio(cantidad, bluRay.getPrecio());
-        JOptionPane.showConfirmDialog(rootPane,"Discos \n"
-                                              +"Tipo: "+bluRay.getNombre()+"\n"
-                                              +"Precio: "+bluRay.getPrecio()+"\n"
-                                              +"Cantidad: "+cantidad+"\n"
-                                              +"Precio Total: "+cobro+"\n\n"
-                                              + "¿Desea efectuar la compra?","Efectuar Compra",1,3);
+        lista.insertFirst("BluRay","Doble");
     }//GEN-LAST:event_botonBlueRay_DActionPerformed
 
     private void botonDVD_DActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonDVD_DActionPerformed
-        fabrica = new FabricaDiscos_CapaDoble();
-        dvd = fabrica.crearDVD();
-        int cantidad = Integer.parseInt(fieldCantidadDiscos.getText());
-        int cobro = CalcularPrecio(cantidad, dvd.getPrecio());
-        JOptionPane.showConfirmDialog(rootPane,"Discos \n"
-                                              +"Tipo: "+dvd.getNombre()+"\n"
-                                              +"Precio: "+dvd.getPrecio()+"\n"
-                                              +"Cantidad: "+cantidad+"\n"
-                                              +"Precio Total: "+cobro+"\n\n"
-                                              + "¿Desea efectuar la compra?","Efectuar Compra",1,3);
+        lista.insertFirst("DVD","Doble");
     }//GEN-LAST:event_botonDVD_DActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        lista.printList(lista);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -254,9 +214,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton botonBlueRay_S;
     private javax.swing.JButton botonDVD_D;
     private javax.swing.JButton botonDVD_S;
-    private javax.swing.JTextField fieldCantidadDiscos;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
